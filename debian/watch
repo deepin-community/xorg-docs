@@ -1,0 +1,4 @@
+#git=git://anongit.freedesktop.org/xorg/doc/xorg-docs
+version=3
+opts="pgpsigurlmangle=s/$/.sig/" \
+https://xorg.freedesktop.orgreleases/individual/doc/ xorg-docs-(.*)\.tar\.gz

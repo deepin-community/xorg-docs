@@ -1,0 +1,17 @@
+Don't build *.ps, we're not shipping them.
+
+diff --git a/docbook.am b/docbook.am
+index bba4d54..776c465 100644
+--- a/docbook.am
++++ b/docbook.am
+@@ -62,10 +62,6 @@ XMLTO_FO_FLAGS = 					\
+ shelf_DATA += $(docbook:.xml=.pdf)
+ %.pdf: %.xml $(chapters)
+ 	$(AM_V_GEN)$(XMLTO) $(XMLTO_FO_FLAGS) --with-fop pdf $<
+-
+-shelf_DATA += $(docbook:.xml=.ps)
+-%.ps: %.xml $(chapters)
+-	$(AM_V_GEN)$(XMLTO) $(XMLTO_FO_FLAGS) --with-fop ps $<
+ endif HAVE_FOP
+ 
+ # Generate documents cross-reference target databases

@@ -1,0 +1,13 @@
+Index: xorg-docs/docbook.am
+===================================================================
+--- xorg-docs.orig/docbook.am
++++ xorg-docs/docbook.am
+@@ -62,7 +62,7 @@ XMLTO_FO_FLAGS = 					\
+ 
+ shelf_DATA += $(docbook:.xml=.pdf)
+ %.pdf: %.xml $(chapters)
+-	$(AM_V_GEN)$(XMLTO) $(XMLTO_FO_FLAGS) --with-fop pdf $<
++	$(AM_V_GEN)$(XMLTO) $(XMLTO_FO_FLAGS) --with-fop pdf $< >/dev/null
+ endif HAVE_FOP
+ 
+ # Generate documents cross-reference target databases

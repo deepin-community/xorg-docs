@@ -1,0 +1,3 @@
+01-disable-ps-generation.diff
+02-disable-automatic-size-detection.diff
+03-tell-xmlto-to-be-quiet.diff

@@ -1,0 +1,16 @@
+Don't use local settings (LC_PAPER), disable paper size autodetection.
+
+diff --git a/docbook.am b/docbook.am
+index bba4d54..7425a1c 100644
+--- a/docbook.am
++++ b/docbook.am
+@@ -47,7 +47,8 @@ shelf_DATA += $(docbook:.xml=.txt)
+ endif HAVE_XMLTO_TEXT
+ 
+ if HAVE_FOP
+-XMLTO_FO_IMAGEPATH_FLAGS = --stringparam img.src.path=$(abs_builddir)/
++XMLTO_FO_IMAGEPATH_FLAGS = --stringparam img.src.path=$(abs_builddir)/ \
++	--noautosize
+ XMLTO_PDF_OLINK_FLAGS = \
+ 	--stringparam target.database.document=$(XORG_SGML_PATH)/X11/dbs/masterdb.pdf.xml \
+ 	--stringparam current.docid="$(<:.xml=)"

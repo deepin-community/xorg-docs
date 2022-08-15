@@ -1,0 +1,43 @@
+Source: xorg-docs
+Section: doc
+Priority: optional
+Maintainer: Deepin Developer <deepin-dev@deepin.org>
+Build-Depends:
+ debhelper (>= 9),
+ dh-autoreconf,
+ quilt,
+ pkg-config,
+ xorg-sgml-doctools (>= 1:1.8),
+ docbook-xml,
+ automake,
+ autoconf,
+ xutils-dev (>= 1:7.6+2),
+ xmlto (>= 0.0.22),
+ fop,
+ w3m,
+Standards-Version: 3.9.6
+#Vcs-Git
+#Vcs-Browser
+
+Package: xorg-docs-core
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: xorg-docs
+Replaces: xorg-docs ( << 1:1.4-5 )
+Multi-Arch: foreign
+Description: Core documentation for the X.org X Window System
+ This package contains core documentation for the X.org X Window
+ System. This currently includes only a set of manpages which are
+ standard for the system.
+
+Package: xorg-docs
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: xprt-xprintorg (<= 1:0.1.0.alpha1-10)
+Replaces: xspecs (<= 1:1.2+git20061105-2), xprt-xprintorg (<= 1:0.1.0.alpha1-10)
+Multi-Arch: foreign
+Description: Miscellaneous documentation for the X.org X Window System
+ This package contains various documents on the X.org X Window System
+ including the release notes for the current version and instructions on
+ the font and xkb subsystems. The documents are in html, pdf, ps, and plain
+ text format.
